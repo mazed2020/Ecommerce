@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import cookiesParser from 'cookie-parser'
+import UserRouter from './routes/user.router.js'
 
 const app = express();
 
@@ -21,8 +22,8 @@ app.use(express.urlencoded({
 app.use(express.static("public"));
 app.use(cookiesParser());
 
- 
-
+ // router here
+ app.use('/api/v1/users',UserRouter)
 
 
 export default app;
