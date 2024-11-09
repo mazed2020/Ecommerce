@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import cookiesParser from 'cookie-parser'
-import UserRouter from './routes/user.router.js'
+import Router from './routes/api.js'
+ 
 
 const app = express();
 
@@ -23,7 +24,10 @@ app.use(express.static("public"));
 app.use(cookiesParser());
 
  // router here
- app.use('/api/v1/users',UserRouter)
+ app.use('/api/v1/users',Router)
+ app.use('/api/v1/products',Router)
+ app.use('/api/v1/categories',Router)
+
 
 
 export default app;
